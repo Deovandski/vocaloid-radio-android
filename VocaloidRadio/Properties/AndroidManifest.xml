@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.VocaloidRadio" android:installLocation="auto" android:versionCode="2" android:versionName="1.1">
+	<uses-sdk />
+	<application android:label="Vocaloid Radio" android:icon="@drawable/Icon"></application>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>
