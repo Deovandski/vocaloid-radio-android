@@ -1,9 +1,3 @@
 App Version History: 
 
-Native Branch:
-
-TO DO
-
-Xamarin Branch:
-
 Major components workings, but consistency is not as expected. Therefore, the “Alpha” version was unpublished from the Store.

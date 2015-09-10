@@ -9,11 +9,6 @@ For EULA and related information, please visit the [Development Blog](http://www
 
 Currently not available on Google Play
 
-
-### Requirements
-
-TO DO
-
 ### Documents
 [Discussions regarding this project](Documents/Discussions.md)
 
