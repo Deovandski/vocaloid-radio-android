@@ -1,14 +1,21 @@
 <resources>
-    <string name="app_name">VocaloidRadio</string>
+    <string name="app_name">Vocaloid Radio</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Radio Stream</string>
+    <string name="title_section2">Previous Songs</string>
+    <string name="title_section3">Request Song</string>
+    <string name="title_section4">Featured Pages</string>
+    <string name="title_section5">Donate</string>
+
+    <string name="title_section6">Privacy Information</string>
+    <string name="title_section7">License Information</string>
+    <string name="title_section8">Technical Information</string>
+    <string name="title_section9">Network Information</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_example">Example action</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="action_settings">Settings</string>
 </resources>

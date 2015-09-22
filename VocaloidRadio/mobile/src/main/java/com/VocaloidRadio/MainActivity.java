@@ -1,6 +1,7 @@
 package com.VocaloidRadio;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -19,7 +20,9 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements RecentSongsFragment.OnFragmentInteractionListener,
+        RadioStreamFragment.OnFragmentInteractionListener,
+        NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -49,10 +52,32 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
+
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        onSectionAttached(position + 1);
+        switch (position) {
+            case 0:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, RadioStreamFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            // RecentSongsFragment
+            case 1:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, RecentSongsFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            case 2:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, RecentSongsFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            default:
+                break;
+        }
     }
 
     public void onSectionAttached(int number) {
@@ -65,6 +90,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
                 break;
         }
     }
@@ -96,13 +124,12 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     /**
@@ -138,11 +165,10 @@ public class MainActivity extends AppCompatActivity
         }
 
         @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(
+        public void onAttach(Context context) {
+            super.onAttach(context);
+            ((MainActivity) context).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
-
 }
