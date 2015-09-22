@@ -3,15 +3,17 @@
     android:layout_height="match_parent" tools:context="com.VocaloidRadio.RadioStreamFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="RadioStream"
-        android:id="@+id/textView3"
-        android:layout_gravity="center" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="261dp"
+        android:id="@+id/currentSong"
+        android:layout_gravity="left|top" />
 
+    <Button
+        android:layout_width="102dp"
+        android:layout_height="68dp"
+        android:text="Play"
+        android:id="@+id/mediaControl"
+        android:layout_gravity="center_horizontal|bottom" />
 </FrameLayout>

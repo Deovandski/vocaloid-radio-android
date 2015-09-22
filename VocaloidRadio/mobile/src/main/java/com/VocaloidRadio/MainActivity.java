@@ -22,6 +22,18 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity
         implements RecentSongsFragment.OnFragmentInteractionListener,
         RadioStreamFragment.OnFragmentInteractionListener,
+        // Webviews Related Fragments
+        DevelopmentBlogFragment.OnFragmentInteractionListener,
+        MainWebsiteFragment.OnFragmentInteractionListener,
+        HelpFragment.OnFragmentInteractionListener,
+        DonateFragment.OnFragmentInteractionListener,
+        FeaturedPagesFragment.OnFragmentInteractionListener,
+        RequestSongFragment.OnFragmentInteractionListener,
+        //Webviews Information Fragments
+        LicenseInformationFragment.OnFragmentInteractionListener,
+        PrivacyInformationFragment.OnFragmentInteractionListener,
+        TechnicalInformationFragment.OnFragmentInteractionListener,
+        NetworkInformationFragment.OnFragmentInteractionListener,
         NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -56,6 +68,8 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         onSectionAttached(position + 1);
         switch (position) {
+
+            // RadioStreamFragment
             case 0:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, RadioStreamFragment.newInstance("", ""))
@@ -69,12 +83,75 @@ public class MainActivity extends AppCompatActivity
                         .commit();
                 break;
 
+            // RequestSongFragment
             case 2:
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, RecentSongsFragment.newInstance("", ""))
+                        .replace(R.id.container, RequestSongFragment.newInstance("", ""))
                         .commit();
                 break;
 
+            // FeaturedPagesFragment
+            case 3:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, FeaturedPagesFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            // DonateFragment
+            case 4:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, DonateFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            // MainWebsiteFragment
+            case 5:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, MainWebsiteFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            // DevelopmentBlogFragment
+            case 6:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, DevelopmentBlogFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            // HelpFragment
+            case 7:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, HelpFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            // PrivacyInformationFragment
+            case 8:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, PrivacyInformationFragment.newInstance("", ""))
+                        .commit();
+                break;
+
+            // LicenseInformationFragment
+            case 9:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, LicenseInformationFragment.newInstance("", ""))
+                .commit();
+                break;
+
+            // TechnicalInformationFragment
+            case 10:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, TechnicalInformationFragment.newInstance("", ""))
+                .commit();
+                break;
+
+            // NetworkInformationFragment
+            case 11:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, NetworkInformationFragment.newInstance("", ""))
+                .commit();
+                break;
             default:
                 break;
         }
@@ -93,6 +170,30 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 4:
                 mTitle = getString(R.string.title_section4);
+                break;
+            case 5:
+                mTitle = getString(R.string.title_section5);
+                break;
+            case 6:
+                mTitle = getString(R.string.title_section6);
+                break;
+            case 7:
+                mTitle = getString(R.string.title_section7);
+                break;
+            case 8:
+                mTitle = getString(R.string.title_section8);
+                break;
+            case 9:
+                mTitle = getString(R.string.title_section9);
+                break;
+            case 10:
+                mTitle = getString(R.string.title_section10);
+                break;
+            case 11:
+                mTitle = getString(R.string.title_section11);
+                break;
+            case 12:
+                mTitle = getString(R.string.title_section12);
                 break;
         }
     }
