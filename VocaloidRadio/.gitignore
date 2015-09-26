@@ -13,6 +13,14 @@
 .idea/libraries
 .idea/tasks.xml
 
+# Experimental .gitignore
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/runConfigurations.xml
+.idea/vcs.xml
+
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
