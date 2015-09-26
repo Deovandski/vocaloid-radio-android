@@ -6,13 +6,28 @@
 /build
 /captures
 
-# Android Studio / IntelliJ IDEA
-# .gitignore extension from http://stackoverflow.com/questions/16736856/what-should-be-in-my-gitignore-for-an-android-studio-project
-*.iws
-/mobile/mobile.iml
-/tv/tv.iml
-*.ipr
-*.iml
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
 .idea/libraries
 .idea/tasks.xml
-.idea/vcs.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.ipr
+*.iws
+*.iml
