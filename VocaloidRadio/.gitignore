@@ -9,8 +9,10 @@
 # Android Studio / IntelliJ IDEA
 # .gitignore extension from http://stackoverflow.com/questions/16736856/what-should-be-in-my-gitignore-for-an-android-studio-project
 *.iws
-*.iml
+/mobile/mobile.iml
+/tv/tv.iml
 *.ipr
+*.iml
 .idea/libraries
 .idea/tasks.xml
 .idea/vcs.xml
