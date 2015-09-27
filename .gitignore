@@ -23,6 +23,7 @@ VocaloidRadio/.idea/vcs.xml
 VocaloidRadio/.idea/workspace.xml
 VocaloidRadio/.idea/compiler.xml
 VocaloidRadio/.idea/runConfigurations.xml
+.idea/
 
 # generic Android ignores
 gen/
