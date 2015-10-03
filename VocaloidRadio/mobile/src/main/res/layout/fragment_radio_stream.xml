@@ -9,15 +9,47 @@
         android:layout_height="261dp"
         android:id="@+id/currentSong"
         android:layout_gravity="left|top"
-        android:layout_above="@+id/mediaControl"
-        android:layout_alignParentTop="true" />
+        android:layout_above="@+id/playButton"
+        android:layout_alignParentTop="true"
+        android:background="@color/bright_foreground_material_light" />
 
     <Button
         android:layout_width="102dp"
         android:layout_height="68dp"
         android:text="Play"
-        android:id="@+id/mediaControl"
+        android:id="@+id/playButton"
         android:layout_gravity="center_horizontal|bottom"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:id="@+id/stopButton"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/currentSong"
+        android:layout_toRightOf="@+id/playButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <MediaController
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mediaController"
+        android:layout_below="@+id/currentSong"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:indeterminate="false"
+        android:layout_below="@+id/mediaController"
+        android:layout_toLeftOf="@+id/playButton"
+        android:layout_toStartOf="@+id/playButton" />
+
 </RelativeLayout>
