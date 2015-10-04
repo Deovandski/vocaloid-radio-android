@@ -1,7 +1,165 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="com.VocaloidRadio.DonateFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-</FrameLayout>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$10"
+        android:id="@+id/TenDollars"
+        android:checked="false"
+        android:layout_below="@+id/donationInfo"
+        android:layout_alignRight="@+id/field1Donate"
+        android:layout_alignEnd="@+id/field1Donate"
+        android:layout_alignLeft="@+id/donationInfo"
+        android:layout_alignStart="@+id/donationInfo" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$20"
+        android:id="@+id/TwentyDollars"
+        android:checked="false"
+        android:layout_below="@+id/TenDollars"
+        android:layout_alignLeft="@+id/TenDollars"
+        android:layout_alignStart="@+id/TenDollars" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="other"
+        android:id="@+id/otherAmount"
+        android:checked="false"
+        android:layout_below="@+id/TwentyDollars"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/donationAmount"
+        android:layout_above="@+id/billingInfo"
+        android:layout_toRightOf="@+id/billingInfo"
+        android:layout_toEndOf="@+id/billingInfo" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="First Name"
+        android:ems="10"
+        android:id="@+id/firstName"
+        android:layout_below="@+id/billingInfo"
+        android:layout_alignLeft="@+id/billingInfo"
+        android:layout_alignStart="@+id/billingInfo" />
+
+    <Spinner
+        android:id="@+id/State"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:layout_marginBottom="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/donationInfo"
+        android:layout_alignEnd="@+id/donationInfo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Donate"
+        android:id="@+id/field1Donate"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Donation Information"
+        android:id="@+id/donationInfo"
+        android:layout_below="@+id/field1Donate"
+        android:layout_alignLeft="@+id/field1Donate"
+        android:layout_alignStart="@+id/field1Donate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Billing Information"
+        android:id="@+id/billingInfo"
+        android:layout_below="@+id/otherAmount"
+        android:layout_alignLeft="@+id/TwentyDollars"
+        android:layout_alignStart="@+id/TwentyDollars" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Last Name"
+        android:ems="10"
+        android:id="@+id/lastName"
+        android:layout_below="@+id/firstName"
+        android:layout_alignLeft="@+id/firstName"
+        android:layout_alignStart="@+id/firstName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/addressLine"
+        android:layout_below="@+id/lastName"
+        android:layout_alignLeft="@+id/lastName"
+        android:layout_alignStart="@+id/lastName"
+        android:text="Address Line" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/city"
+        android:layout_below="@+id/addressLine"
+        android:layout_alignLeft="@+id/addressLine"
+        android:layout_alignStart="@+id/addressLine"
+        android:text="City" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="State"
+        android:id="@+id/field3State"
+        android:layout_above="@+id/State"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/city"
+        android:layout_toLeftOf="@+id/donationAmount"
+        android:layout_toStartOf="@+id/donationAmount" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="$"
+        android:id="@+id/dollarSign"
+        android:layout_alignBottom="@+id/donationAmount"
+        android:layout_toLeftOf="@+id/donationAmount"
+        android:layout_toStartOf="@+id/donationAmount" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/zip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Zip code" />
+
+</RelativeLayout>
