@@ -4,4 +4,92 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Your Name"
+        android:ems="10"
+        android:id="@+id/name"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_above="@+id/artist"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/artist"
+        android:text="Artist/Producer"
+        android:layout_above="@+id/song"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/song"
+        android:text="Song"
+        android:layout_above="@+id/email"
+        android:layout_alignLeft="@+id/email"
+        android:layout_alignStart="@+id/email" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email"
+        android:text="Email"
+        android:layout_above="@+id/nicoNico"
+        android:layout_alignLeft="@+id/artist"
+        android:layout_alignStart="@+id/artist" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nicoNico"
+        android:text="NicoNico"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/email"
+        android:layout_alignStart="@+id/email" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comment"
+        android:text="Comment"
+        android:layout_below="@+id/nicoNico"
+        android:layout_alignRight="@+id/nicoNico"
+        android:layout_alignEnd="@+id/nicoNico" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submitButton"
+        android:layout_below="@+id/comment"
+        android:layout_alignRight="@+id/nicoNico"
+        android:layout_alignEnd="@+id/nicoNico"
+        android:layout_marginTop="56dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Request Song"
+        android:id="@+id/field1request"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>
