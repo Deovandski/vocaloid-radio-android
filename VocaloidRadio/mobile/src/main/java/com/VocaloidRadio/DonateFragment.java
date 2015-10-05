@@ -1,6 +1,5 @@
 package com.VocaloidRadio;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 
 /**
@@ -65,7 +66,19 @@ public class DonateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_donate, container, false);
+        View viewer = inflater.inflate(R.layout.fragment_donate, container, false);
+
+        // Webview Code
+        WebView webView = (WebView) viewer.findViewById(R.id.donateWebview);
+        if (webView == null) {
+            throw new AssertionError();
+        }
+        else {
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webView.loadUrl("http://vocaloidradio.com/donate/");
+        }
+        return viewer;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
