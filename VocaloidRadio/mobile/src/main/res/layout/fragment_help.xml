@@ -4,12 +4,23 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/helpWebView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Contact Us"
-        android:id="@+id/contactUs"
+        android:id="@+id/contactUsTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -20,8 +31,8 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/contactUs"
+        android:id="@+id/name_field_contactUs"
+        android:layout_below="@+id/contactUsTitle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -30,29 +41,30 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:id="@+id/email_field_contactUs"
+        android:layout_below="@+id/name_field_contactUs"
+        android:layout_alignRight="@+id/name_field_contactUs"
+        android:layout_alignEnd="@+id/name_field_contactUs"
         android:text="Email" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/comment"
-        android:layout_below="@+id/editText2"
+        android:id="@+id/comment_box_contactUs"
+        android:layout_below="@+id/email_field_contactUs"
+        android:layout_alignRight="@+id/email_field_contactUs"
+        android:layout_alignEnd="@+id/email_field_contactUs"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2"
         android:text="Comment" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send"
-        android:id="@+id/send"
-        android:layout_below="@+id/comment"
+        android:id="@+id/sendButton"
+        android:layout_below="@+id/comment_box_contactUs"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 </RelativeLayout>

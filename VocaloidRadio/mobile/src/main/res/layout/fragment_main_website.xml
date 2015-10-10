@@ -4,4 +4,46 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainWebView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/banner"
+        android:minHeight="@dimen/abc_text_size_display_2_material"
+        android:nestedScrollingEnabled="false"
+        android:minWidth="@dimen/xxxlarge"
+        android:src="@drawable/vocaloid_radio_logo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="This is a title"
+        android:id="@+id/title_mainWebsite"
+        android:layout_below="@+id/banner"
+        android:layout_alignLeft="@+id/paragraph_mainWebsite"
+        android:layout_alignStart="@+id/paragraph_mainWebsite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="this is text is meant to serve as an modle of where the paragraph is going to beplaced"
+        android:id="@+id/paragraph_mainWebsite"
+        android:maxWidth="@dimen/xlarge"
+        android:layout_below="@+id/title_mainWebsite"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
