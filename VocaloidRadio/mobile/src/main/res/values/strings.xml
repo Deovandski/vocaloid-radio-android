@@ -3,23 +3,10 @@
 
     <string name="title_section1">Radio Stream</string>
     <string name="title_section2">Recent Songs</string>
-    <string name="title_section3">Request Song</string>
-    <string name="title_section4">Featured Pages</string>
-    <string name="title_section5">Donate</string>
-
-    <string name="title_section6">Official Website</string>
-    <string name="title_section7">Development Blog</string>
-    <string name="title_section8">Help</string>
-    <string name="title_section9">Privacy Information</string>
-    <string name="title_section10">License Information</string>
-    <string name="title_section11">Technical Information</string>
-    <string name="title_section12">Network Information</string>
+    <string name="title_section3">Featured Pages</string>
+    <string name="title_section4">Official Website</string>
+    <string name="title_section5">App Information</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="request">Request Song</string>
-
 </resources>

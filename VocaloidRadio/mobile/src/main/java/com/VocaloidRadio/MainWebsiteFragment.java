@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 
 /**
@@ -65,14 +67,19 @@ public class MainWebsiteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_website, container, false);
-    }
+        View viewer = inflater.inflate(R.layout.fragment_main_website, container, false);
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+        // Webview Code
+        WebView webView = (WebView) viewer.findViewById(R.id.mainWebView);
+        if (webView == null) {
+            throw new AssertionError();
         }
+        else {
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(false);
+            webView.loadUrl("http://vocaloidradio.com/");
+        }
+        return viewer;
     }
 
     @Override

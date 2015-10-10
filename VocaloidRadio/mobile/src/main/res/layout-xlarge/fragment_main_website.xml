@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.VocaloidRadio.DevelopmentBlogFragment">
+    android:layout_height="match_parent" tools:context="com.VocaloidRadio.MainWebsiteFragment">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -12,26 +12,17 @@
         android:src="@drawable/vocaloid_radio_logo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
     <WebView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/developmentWebview"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:id="@+id/mainWebView"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Privacy, Legal and all other App related information can be found on the Development Blog."
-        android:id="@+id/textView"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/banner"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
