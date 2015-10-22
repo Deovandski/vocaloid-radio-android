@@ -1,6 +1,5 @@
 package com.VocaloidRadio;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,15 +10,16 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link RecentSongsFragment.OnFragmentInteractionListener} interface
+ * {@link RSSFeedFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link RecentSongsFragment#newInstance} factory method to
+ * Use the {@link RSSFeedFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RecentSongsFragment extends Fragment {
+public class RSSFeedFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -37,11 +37,11 @@ public class RecentSongsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment RecentSongsFragment.
+     * @return A new instance of fragment RSSFeedFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static RecentSongsFragment newInstance(String param1, String param2) {
-        RecentSongsFragment fragment = new RecentSongsFragment();
+    public static RSSFeedFragment newInstance(String param1, String param2) {
+        RSSFeedFragment fragment = new RSSFeedFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -49,7 +49,7 @@ public class RecentSongsFragment extends Fragment {
         return fragment;
     }
 
-    public RecentSongsFragment() {
+    public RSSFeedFragment() {
         // Required empty public constructor
     }
 
@@ -66,17 +66,17 @@ public class RecentSongsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View viewer = inflater.inflate(R.layout.fragment_recent_songs, container, false);
+        View viewer = inflater.inflate(R.layout.fragment_rss_feed, container, false);
 
         // Webview Code
-        WebView webView = (WebView) viewer.findViewById(R.id.recentSongsWebview);
+        WebView webView = (WebView) viewer.findViewById(R.id.rssWebView);
         if (webView == null) {
             throw new AssertionError();
         }
         else {
             WebSettings webSettings = webView.getSettings();
             webSettings.setJavaScriptEnabled(true);
-            webView.loadUrl("file:///android_res/raw/previous_song.html");
+            webView.loadUrl("file:///android_res/raw/rss_feed.html");
         }
         return viewer;
     }

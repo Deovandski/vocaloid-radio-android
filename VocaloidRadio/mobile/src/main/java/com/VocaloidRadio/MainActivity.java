@@ -1,23 +1,18 @@
 package com.VocaloidRadio;
 
-import android.app.Activity;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements RecentSongsFragment.OnFragmentInteractionListener,
@@ -26,6 +21,7 @@ public class MainActivity extends AppCompatActivity
         DevelopmentBlogFragment.OnFragmentInteractionListener,
         MainWebsiteFragment.OnFragmentInteractionListener,
         FeaturedPagesFragment.OnFragmentInteractionListener,
+        RSSFeedFragment.OnFragmentInteractionListener,
         NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
@@ -96,6 +92,13 @@ public class MainActivity extends AppCompatActivity
                         .commit();
                 break;
 
+            // RSSFragment
+            case 5:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, RSSFeedFragment.newInstance("", ""))
+                        .commit();
+                break;
+
             default:
                 break;
         }
@@ -117,6 +120,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
+                break;
+            case 6:
+                mTitle = getString(R.string.title_section6);
                 break;
         }
     }

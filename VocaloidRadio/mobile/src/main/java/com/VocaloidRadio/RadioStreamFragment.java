@@ -12,6 +12,8 @@ import android.support.v7.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -85,9 +87,22 @@ public class RadioStreamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_radio_stream, container, false);
-        initializePlayer(view);
-        return view;
+        View viewer = inflater.inflate(R.layout.fragment_radio_stream, container, false);
+
+        // Webview Code
+        WebView webView = (WebView) viewer.findViewById(R.id.currentSong);
+        if (webView == null) {
+            throw new AssertionError();
+        }
+        else {
+            WebSettings webSettings = webView.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webView.loadUrl("file:///android_res/raw/song_info.html");
+        }
+
+        // Background Player Code
+        initializePlayer(viewer);
+        return viewer;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
