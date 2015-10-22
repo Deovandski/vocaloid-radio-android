@@ -1,13 +1,21 @@
 package com.VocaloidRadio;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import java.io.IOException;
 
 
 /**
@@ -31,6 +39,13 @@ public class RadioStreamFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    /** Media player */
+    private static MediaPlayer mPlayer;
+    /* Play Button */
+    private Button buttonPlay;
+    /** Stop Button */
+    private Button buttonStop;
 
     /**
      * Use this factory method to create a new instance of
@@ -61,13 +76,18 @@ public class RadioStreamFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_radio_stream, container, false);
+        View view = inflater.inflate(R.layout.fragment_radio_stream, container, false);
+        initializePlayer(view);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -109,4 +129,69 @@ public class RadioStreamFragment extends Fragment {
         public void onFragmentInteraction(Uri uri);
     }
 
+    /**
+     * Creates a new mediaPlayer using a stream music URL,
+     * Adds onClick Listeners to the Play and Stop buttons
+     * @param view View that contains the buttons
+     */
+    private void initializePlayer(View view) {
+        buttonPlay = (Button) view.findViewById(R.id.playButton);
+        //Set Play listener
+        buttonPlay.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (mPlayer != null && mPlayer.isPlaying()) {
+                    return;
+                }
+                mPlayer = new MediaPlayer();
+                mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                try {
+                    mPlayer.setDataSource(getString(R.string.stream_url));
+                } catch (IllegalArgumentException e) {
+                    Toast.makeText(getActivity().getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
+                } catch (SecurityException e) {
+                    Toast.makeText(getActivity().getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
+                } catch (IllegalStateException e) {
+                    Toast.makeText(getActivity().getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    mPlayer.prepareAsync();
+                    final ProgressDialog nDialog = new ProgressDialog(getActivity());
+                    nDialog.setMessage(getString(R.string.loading));
+                    nDialog.setTitle(getString(R.string.checking_net));
+                    nDialog.setIndeterminate(false);
+                    nDialog.setCancelable(false);
+                    nDialog.show();
+                    mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                        @Override
+                        public void onPrepared(MediaPlayer mp) {
+                            nDialog.dismiss();
+                            mp.start();
+                        }
+                    });
+                    mPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+                        @Override
+                        public boolean onError(MediaPlayer mp, int what, int extra) {
+                            return false;
+                        }
+                    });
+                } catch (IllegalStateException e) {
+                    Toast.makeText(getActivity().getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
+                }
+                mPlayer.start();
+            }
+        });
+
+        //Set Stop Listener
+        buttonStop = (Button) view.findViewById(R.id.stopButton);
+        buttonStop.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                if (mPlayer != null && mPlayer.isPlaying()) {
+                    mPlayer.stop();
+                }
+            }
+        });
+    }
 }
