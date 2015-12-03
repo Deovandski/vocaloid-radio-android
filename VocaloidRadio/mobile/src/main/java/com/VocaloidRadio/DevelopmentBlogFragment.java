@@ -70,7 +70,7 @@ public class DevelopmentBlogFragment extends Fragment {
         }
         else {
             WebSettings webSettings = webView.getSettings();
-            webSettings.setJavaScriptEnabled(false); // Check if Javascript is enabled
+            webSettings.setJavaScriptEnabled(false); // Disable Javascript
             webView.loadUrl("http://www.vocaloidradioapp.blogspot.com/p/android-windowsphone-version.html"); // Load HTTP url
         }
         return viewer; // Show URL content

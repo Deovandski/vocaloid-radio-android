@@ -70,7 +70,7 @@ public class FeaturedPagesFragment extends Fragment {
         }
         else {
             WebSettings webSettings = webView.getSettings();
-            webSettings.setJavaScriptEnabled(false); // Check if Javascript is enabled
+            webSettings.setJavaScriptEnabled(false); // Disable Javascript
             webView.loadUrl("http://vocaloidradioapp.blogspot.com/2014/06/vocaloid-radio-featured-pages.html");  // Load HTTP url
         }
         return viewer; // Show URL content
