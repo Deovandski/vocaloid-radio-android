@@ -22,20 +22,12 @@ import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link RadioStreamFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link RadioStreamFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class RadioStreamFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    // Fragment initialization parameters
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
 
     private String mParam1;
     private String mParam2;
@@ -50,19 +42,20 @@ public class RadioStreamFragment extends Fragment {
     private Button buttonStop;
 
     /**
-     * Use this factory method to create a new instance of
+     * Factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
      * @return A new instance of fragment RadioStreamFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static RadioStreamFragment newInstance(String param1, String param2) {
+        // New fragment creation
         RadioStreamFragment fragment = new RadioStreamFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        // Setting up arguments in the created fragment
         fragment.setArguments(args);
         return fragment;
     }
@@ -72,7 +65,7 @@ public class RadioStreamFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {  // Initial setup of the activity
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -96,16 +89,15 @@ public class RadioStreamFragment extends Fragment {
         }
         else {
             WebSettings webSettings = webView.getSettings();
-            webSettings.setJavaScriptEnabled(true);
-            webView.loadUrl("file:///android_res/raw/song_info.html");
+            webSettings.setJavaScriptEnabled(true); // Enable Javascript
+            webView.loadUrl("file:///android_res/raw/song_info.html");  // Load HTTP url
         }
 
         // Background Player Code
         initializePlayer(viewer);
         return viewer;
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
+    // Load the URI when the button is preesed
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -113,7 +105,7 @@ public class RadioStreamFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context) {  // Called when a fragment is first attached to its context
         super.onAttach(context);
         try {
             mListener = (OnFragmentInteractionListener) context;
@@ -124,7 +116,7 @@ public class RadioStreamFragment extends Fragment {
     }
 
     @Override
-    public void onDetach() {
+    public void onDetach() {  // Called when a fragment is no longer attached to its activity
         super.onDetach();
         mListener = null;
     }
@@ -134,13 +126,8 @@ public class RadioStreamFragment extends Fragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
 
@@ -157,11 +144,13 @@ public class RadioStreamFragment extends Fragment {
                 if (mPlayer != null && mPlayer.isPlaying()) {
                     return;
                 }
-                mPlayer = new MediaPlayer();
+                mPlayer = new MediaPlayer(); // Create a new MediaPlayer object
                 mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 try {
-                    mPlayer.setDataSource(getString(R.string.stream_url));
-                } catch (IllegalArgumentException e) {
+                    mPlayer.setDataSource(getString(R.string.stream_url)); // Streaming Audio URL
+                }
+                // Handle Exceptions
+                  catch (IllegalArgumentException e) {
                     Toast.makeText(getActivity().getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
                 } catch (SecurityException e) {
                     Toast.makeText(getActivity().getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
@@ -171,13 +160,15 @@ public class RadioStreamFragment extends Fragment {
                     e.printStackTrace();
                 }
                 try {
+                    // Prepares the player for playback, asynchronously
                     mPlayer.prepareAsync();
                     final ProgressDialog nDialog = new ProgressDialog(getActivity());
-                    nDialog.setMessage(getString(R.string.loading));
-                    nDialog.setTitle(getString(R.string.checking_net));
+                    nDialog.setMessage(getString(R.string.loading)); // Message shown while loading the streaming
+                    nDialog.setTitle(getString(R.string.checking_net));  // Message shown while loading the streaming
                     nDialog.setIndeterminate(false);
                     nDialog.setCancelable(false);
                     nDialog.show();
+                    // Register a callback to be invoked when the media source is ready for playback.
                     mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                         @Override
                         public void onPrepared(MediaPlayer mp) {
@@ -185,16 +176,19 @@ public class RadioStreamFragment extends Fragment {
                             mp.start();
                         }
                     });
+                    // Register a callback to be invoked when an error has happened during an asynchronous operation.
                     mPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
                         @Override
                         public boolean onError(MediaPlayer mp, int what, int extra) {
                             return false;
                         }
                     });
-                } catch (IllegalStateException e) {
+                }
+                // Handle Exceptions
+                  catch (IllegalStateException e) {
                     Toast.makeText(getActivity().getApplicationContext(), "You might not set the URI correctly!", Toast.LENGTH_LONG).show();
                 }
-                mPlayer.start();
+                mPlayer.start(); // Starting the Media Player object
             }
         });
 
