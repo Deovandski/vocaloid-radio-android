@@ -35,15 +35,16 @@ public class MainActivity extends AppCompatActivity
     private CharSequence mTitle;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {  // Initial setup of the activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Load Navigation Drawer
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
-        // Set up the drawer.
+        // Set up the Drawer
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
+        // Update the main content by replacing fragments
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         onSectionAttached(position + 1);
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    // Method to change between fragments
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
@@ -159,7 +161,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-
+        // Empty constructor
     }
 
     /**
@@ -190,12 +192,13 @@ public class MainActivity extends AppCompatActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            // Inflate the layout for this fragment
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             return rootView;
         }
 
         @Override
-        public void onAttach(Context context) {
+        public void onAttach(Context context) {  // Called when a fragment is first attached to its context
             super.onAttach(context);
             ((MainActivity) context).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
