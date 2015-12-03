@@ -73,7 +73,7 @@ public class DevelopmentBlogFragment extends Fragment {
             webSettings.setJavaScriptEnabled(false); // Check if Javascript is enabled
             webView.loadUrl("http://www.vocaloidradioapp.blogspot.com/p/android-windowsphone-version.html"); // Load HTTP url
         }
-        return viewer; // Show it
+        return viewer; // Show URL content
     }
 
     @Override
@@ -100,7 +100,6 @@ public class DevelopmentBlogFragment extends Fragment {
      * activity.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
 
