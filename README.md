@@ -11,7 +11,7 @@ For the Xamarin version, please refer to the [Xamarin branch](https://github.com
 
 ### Store Links
 
-Currently not available on Google Play
+No londer available on Google Play.
 
 ### Documents
 [Discussions regarding this project](Documents/Discussions.md)
