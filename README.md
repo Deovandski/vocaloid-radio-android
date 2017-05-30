@@ -7,14 +7,14 @@ For EULA and related information, please visit the [Development Blog](http://www
 
 ### Notice
 
-For the Xamarin version, please refer to the [Xamarin branch](https://github.com/Deovandski/Vocaloid_Radio_Android/tree/Xamarin)
+For the Xamarin version, please refer to the [Xamarin branch](https://github.com/Deovandski/vocaloid-radio-android/tree/Xamarin)
 
 ### Store Links
 
 No londer available on Google Play.
 
 ### Documents
-[Discussions regarding this project](Documents/discussions.md)
+[Discussions regarding this project](Documents/Discussions.md)
 
 [Changelog](Documents/version-information.txt)
 
