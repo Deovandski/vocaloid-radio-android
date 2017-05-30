@@ -14,12 +14,12 @@ For the Xamarin version, please refer to the [Xamarin branch](https://github.com
 No londer available on Google Play.
 
 ### Documents
-[Discussions regarding this project](Documents/Discussions.md)
+[Discussions regarding this project](Documents/discussions.md)
 
-[Changelog](Documents/Version Information.txt)
+[Changelog](Documents/version-information.txt)
 
 ### License
-[The MIT License (MIT)](Documents/LICENSE.md)
+[The MIT License (MIT)](LICENSE)
 
 Source Code Copyright (c) 2013 - 2014, Deovandski Skibinski Junior
 
@@ -29,6 +29,6 @@ Angela Alean
 Andrew Sailer
 Alejandro Garcia Burgos
 
-Source Code Copyright (c) 2016, Deovandski Skibinski Junior
+Source Code Copyright (c) 2016 - 2017, Deovandski Skibinski Junior
 
 All rights reserved to their respective owners.
