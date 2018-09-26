@@ -25,7 +25,9 @@ Source Code Copyright (c) 2013 - 2014, Deovandski Skibinski Junior
 
 Source Code Copyright (c) 2015,
 Deovandski Skibinski Junior
+
 Angela Alean
+
 Andrew Sailer
 
 Source Code Copyright (c) 2016 - 2017, Deovandski Skibinski Junior
