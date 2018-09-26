@@ -27,7 +27,6 @@ Source Code Copyright (c) 2015,
 Deovandski Skibinski Junior
 Angela Alean
 Andrew Sailer
-Alejandro Garcia Burgos
 
 Source Code Copyright (c) 2016 - 2017, Deovandski Skibinski Junior
 
